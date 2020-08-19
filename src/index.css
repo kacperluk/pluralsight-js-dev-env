@@ -1,0 +1,9 @@
+body {
+	font-family: Sans-Serif;
+}
+
+#hello_world {
+	padding: 30px;
+	font-weight: bold;
+	border: 5px solid black;
+}
