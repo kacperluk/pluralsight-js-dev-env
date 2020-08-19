@@ -1,9 +1,17 @@
 import express from 'express';
 import path from 'path';
 import open from 'open';
+import webpack from 'webpack';
+import config from '../webpack.config.dev';
 
 const port = 3000;
 const app = express()
+const compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(complier, {
+	noInfo: true,
+	publicPath: config.output.publicPath
+}));
 
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../src/index.html'));
@@ -12,4 +20,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
 	console.log('Listening on port 3000')
 	open('http://localhost:' + port)
-})
+});
