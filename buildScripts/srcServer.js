@@ -18,6 +18,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-	console.log('Listening on port 3000')
-	open('http://localhost:' + port)
+	console.log('Listening on port 3000'); // eslint-disable-line no-console
+	open('http://localhost:' + port);
 });
